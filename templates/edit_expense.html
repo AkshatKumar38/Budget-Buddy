@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Edit Expense</h2>
+    <form action="{{ url_for('expenses.edit_expense', id=expense.id) }}" method="post">
+        <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" id="category" name="category" class="form-control" value="{{ expense.category }}" required>
+        </div>
+        <div class="form-group mt-3">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" class="form-control" value="{{ expense.amount }}" step="0.01" required>
+        </div>
+        <div class="form-group mt-3">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control">{{ expense.description }}</textarea>
+        </div>
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-primary">Update Expense</button>
+            <a href="{{ url_for('expenses.index') }}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

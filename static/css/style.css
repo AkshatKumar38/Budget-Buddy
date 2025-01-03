@@ -4,12 +4,16 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    flex: 1;  /* Ensures content takes up available space */
 }
 
 /* Header Styles */
@@ -22,6 +26,7 @@ body {
 .header .logo {
     font-size: 1.5em;
     font-weight: bold;
+    float: left;
 }
 
 .header nav {
@@ -116,12 +121,19 @@ body {
 }
 
 /* Footer */
+
+/*************  ✨ Codeium Command 🌟  *************/
 footer {
     background-color: #1a73e8;
     color: white;
     text-align: center;
     padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto; /* Pushes footer to the bottom */
 }
+/******  afb3772c-2188-436b-853a-f7f8daf9da9a  *******/
 
 footer p {
     margin: 0;
