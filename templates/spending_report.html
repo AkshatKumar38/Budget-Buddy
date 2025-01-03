@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Spending Report</h2>
+<p><strong>Total Spending:</strong> ${{ total_spending }}</p>
+
+<h3>Category-wise Breakdown</h3>
+<img src="{{ category_graph }}" alt="Category-wise Spending Pie Chart" class="img-fluid">
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Total Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for category, amount in category_breakdown %}
+        <tr>
+            <td>{{ category }}</td>
+            <td>${{ amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>Monthly Spending</h3>
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Month</th>
+            <th>Total Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for month, amount in monthly_spending %}
+        <tr>
+            <td>{{ month }}</td>
+            <td>${{ amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>Weekly Spending</h3>
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Week</th>
+            <th>Total Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for week, amount in weekly_spending %}
+        <tr>
+            <td>{{ week }}</td>
+            <td>${{ amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

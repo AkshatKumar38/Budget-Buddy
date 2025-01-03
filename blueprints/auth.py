@@ -10,23 +10,20 @@ def login():
         email = request.form['email']
         password = request.form['password']
 
-        # Find the user by email
+        # Form validation
+        if not email or not password:
+            flash('Email and password are required!', 'danger')
+            return redirect(url_for('auth.login'))
+
+        # Authenticate the user
         user = User.query.filter_by(email=email).first()
-        if not user:
-            flash('Invalid email or password.', 'danger')
+        if user and bcrypt.check_password_hash(user.password, password):
+            session['user_id'] = user.id
+            flash('Login successful!', 'success')
+            return redirect(url_for('expenses.index'))
+        else:
+            flash('Invalid email or password!', 'danger')
             return redirect(url_for('auth.login'))
-
-        # Check the hashed password
-        if not bcrypt.check_password_hash(user.password, password):
-            flash('Invalid email or password.', 'danger')
-            return redirect(url_for('auth.login'))
-
-        # Login successful, store user information in session
-        session['user_id'] = user.id
-        session['username'] = user.username
-        flash(f'Welcome back, {user.username}!', 'success')
-        return redirect(url_for('expenses.index'))  # Adjust based on your Blueprint name
-    
     return render_template('login.html')
 
 @auth_bp.route('/signup', methods=['GET', 'POST'])
