@@ -1,6 +1,6 @@
 from flask import Flask
 from extensions import db, bcrypt
-
+from flask_migrate import Migrate
 from datetime import timedelta
 
 def create_app():
@@ -16,10 +16,8 @@ def create_app():
     db.init_app(app)
     bcrypt.init_app(app)
     
-    # Create database tables
-    from models import User, Expense
-    with app.app_context():
-        db.create_all()
+    # Initialize Flask-Migrate
+    migrate = Migrate(app, db)
 
     # Register Blueprints
     from blueprints.auth import auth_bp

@@ -71,6 +71,7 @@ def edit_expense(id):
     return render_template('edit_expense.html', expense=expense)
 
 @expenses_bp.route('/spending')
+@login_required
 def spending_report():
     # Total spending
     total_spending = db.session.query(func.sum(Expense.amount)).scalar() or 0
@@ -104,11 +105,6 @@ def spending_report():
         weekly_spending=weekly_spending,
         category_graph=category_graph
     )
-
-
-
-
-
 
 def generate_category_pie_chart(category_breakdown):
     # Prepare data

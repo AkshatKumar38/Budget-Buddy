@@ -3,30 +3,58 @@
 {% block title %}Welcome to Budget Buddy{% endblock %}
 
 {% block content %}
-<section class="hero">
-    <div class="container">
-        <h1>Take Control of Your Finances</h1>
-        <p>Track your expenses, categorize your spending, and achieve your financial goals—all in one place.</p>
-        <a href="{{ url_for('auth.signup') }}"  class="btn btn-primary">Get Started</a>
+<!-- Hero Section -->
+<section class="hero py-5">
+    <div class="container text-center">
+        <h1 class="display-4 animated fadeIn">Take Control of Your Finances</h1>
+        <p class="lead animated fadeIn delay-1s">Track your expenses, categorize your spending, and achieve your financial goals—all in one place.</p>
+        {% if session.get('user_id') %}
+            <a href="{{ url_for('expenses.index') }}" class="btn btn-light btn-lg animated fadeIn delay-2s">View Expenses</a>
+        {% else %}
+            <a href="{{ url_for('auth.signup') }}" class="btn btn-light btn-lg animated fadeIn delay-2s">Get Started</a>
+        {% endif %}
     </div>
 </section>
-<section class="features">
+
+<!-- Features Section -->
+<section class="features py-5">
     <div class="container">
-        <h2>Features</h2>
-        <div class="feature-list">
-            <div class="feature-item">
-                <h3>Track Expenses</h3>
-                <p>Easily log your daily expenses and view them in one place.</p>
+        <h2 class="text-center mb-4 animated fadeIn delay-3s">Features</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm feature-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Track Expenses</h3>
+                        <p class="card-text">Easily log your daily expenses and view them in one place.</p>
+                    </div>
+                </div>
             </div>
-            <div class="feature-item">
-                <h3>Organize Spending</h3>
-                <p>Categorize your spending to understand where your money goes.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm feature-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Organize Spending</h3>
+                        <p class="card-text">Categorize your spending to understand where your money goes.</p>
+                    </div>
+                </div>
             </div>
-            <div class="feature-item">
-                <h3>Visual Reports</h3>
-                <p>Get insightful charts and graphs to analyze your habits.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm feature-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Visual Reports</h3>
+                        <p class="card-text">Get insightful charts and graphs to analyze your habits.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+{% endblock %}
+
+{% block styles %}
+
+
+
 {% endblock %}

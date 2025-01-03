@@ -1,0 +1,117 @@
+/* Global Theme Variables */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+    --text-color: #000000; /* Default text color for light theme */
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --card-bg: #f8f9fa;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Light Theme */
+.light-theme {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+    --text-color: #000000; /* Light theme text color */
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --card-bg: #f8f9fa;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+.dark-theme {
+    --primary-color: #343a40;
+    --secondary-color: #adb5bd;
+    --background-color: #212529;
+    --text-color: #f8f9fa; /* Light text for dark theme */
+    --button-bg: #28a745;
+    --button-hover-bg: #218838;
+    --card-bg: #495057;
+    --card-shadow: rgba(255, 255, 255, 0.1);
+}
+/* Warm Theme */
+.warm-theme {
+    --primary-color: #f57c00;
+    --secondary-color: #ff7043;
+    --background-color: #fff3e0;
+    --text-color: #212121; /* Dark text for warm theme */
+    --button-bg: #f57c00;
+    --button-hover-bg: #e64a19;
+    --card-bg: #ffccbc;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Cool Theme */
+.cool-theme {
+    --primary-color: #00bcd4;
+    --secondary-color: #8bc34a;
+    --background-color: #e1f5fe;
+    --text-color: #212121; /* Dark text for cool theme */
+    --button-bg: #00bcd4;
+    --button-hover-bg: #008c9e;
+    --card-bg: #80deea;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Table Specific for Dark Theme */
+.dark-theme table, .dark-theme th, .dark-theme td {
+    color: var(--text-color); /* Ensure table text is visible in dark theme */
+    border-color: var(--secondary-color); /* Lighter border for visibility */
+}
+
+/* Alternate Row Styling for Dark Theme */
+.dark-theme table tbody tr:nth-child(odd) {
+    background-color: #343a40; /* Darker background for odd rows */
+}
+
+.dark-theme table tbody tr:nth-child(even) {
+    background-color: #495057; /* Slightly lighter background for even rows */
+}
+
+/* Hover Effect for Rows */
+.dark-theme table tr:hover {
+    background-color: #007bff; /* Change on hover */
+    color: var(--text-color); /* Maintain text color */
+}
+
+/* Apply Global Styles for Text Color */
+body, .hero, .features, .card, table, th, td {
+    color: var(--text-color); /* Ensures text color is consistent with the theme */
+    background-color: var(--background-color); /* Ensure background is also consistent */
+}
+
+/* Table-specific styling */
+table, th, td {
+    color: var(--text-color); /* Ensure table text color matches the theme */
+    border-color: var(--secondary-color); /* Optional: color for table borders */
+}
+
+button {
+    background-color: var(--button-bg);
+    color: #fff;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* For rows on hover */
+table tr:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Additional specific styles for theme effects */
+.card {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+.hero {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
