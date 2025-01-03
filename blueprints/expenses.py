@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from models import Expense
 from extensions import db
+from decorators import login_required  # Import the decorator
+
 
 expenses_bp = Blueprint('expenses', __name__, url_prefix='/')
 
@@ -9,7 +11,13 @@ def landing_page():
     expenses = Expense.query.all()
     return render_template('landing.html', expenses=expenses)
 
-@expenses_bp.route('/add', methods=['GET', 'POST'])
+@expenses_bp.route('/index')
+@login_required  # Ensure the user is logged in before accessing the page
+def index():
+    # Fetch and display user expenses from the database here
+    return render_template('index.html')
+
+@expenses_bp.route('/add-expense', methods=['GET', 'POST'])
 def add_expense():
     if request.method == 'POST':
         category = request.form['category']

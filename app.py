@@ -1,5 +1,6 @@
 from flask import Flask
-from extensions import db
+from extensions import db, bcrypt
+from models import User
 from blueprints.auth import auth_bp
 from blueprints.expenses import expenses_bp
 
@@ -10,7 +11,8 @@ def create_app():
 
     # Initialize extensions
     db.init_app(app)
-
+    bcrypt.init_app(app)
+    
     # Create database tables
     with app.app_context():
         db.create_all()

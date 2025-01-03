@@ -12,8 +12,13 @@
         <div class="container">
             <h1 class="logo">Budget Buddy</h1>
             <nav>
-                <a href="{{ url_for('auth.login') }}" class="btn">Log In</a>
-                <a href="{{ url_for('auth.signup') }}" class="btn btn-primary">Sign Up</a>
+                {% if session.get('user_id') %}
+                    <a href="{{ url_for('auth.logout') }}">Log Out</a>
+                    <span>Welcome, {{ session.get('username') }}</span>
+                {% else %}
+                    <a href="{{ url_for('auth.login') }}">Log In</a>
+                    <a href="{{ url_for('auth.signup') }}">Sign Up</a>
+                {% endif %}
             </nav>
         </div>
     </header>

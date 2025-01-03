@@ -10,6 +10,7 @@
             <th>Actions</th>
         </tr>
     </thead>
+    <a href="{{ url_for('expenses.add_expense') }}" class="btn btn-primary">Add Expense</a>
     <tbody>
         {% for expense in expenses %}
         <tr>
@@ -24,5 +25,5 @@
         {% endfor %}
     </tbody>
 </table>
-<a href="{{ url_for('add_expense') }}" class="btn btn-primary">Add Expense</a>
+
 {% endblock %}
