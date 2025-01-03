@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 1em 0;
+}
+
+.header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header nav {
+    float: right;
+}
+
+.header nav .btn {
+    text-decoration: none;
+    margin-left: 1em;
+    color: white;
+    padding: 0.5em 1em;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header nav .btn-primary {
+    background-color: white;
+    color: #1a73e8;
+    border-color: white;
+}
+
+.header nav .btn:hover {
+    background-color: white;
+    color: #1a73e8;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f1f3f4;
+    text-align: center;
+    padding: 4em 1em;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.hero .btn {
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.hero .btn-primary {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+}
+
+.hero .btn-primary:hover {
+    background-color: #135abc;
+}
+
+/* Features Section */
+.features {
+    padding: 3em 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.feature-item {
+    background-color: #f1f3f4;
+    padding: 1.5em;
+    border-radius: 10px;
+    width: calc(33.333% - 2em);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Footer */
+footer {
+    background-color: #1a73e8;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+footer p {
+    margin: 0;
+}

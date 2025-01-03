@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Budget Buddy{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Take Control of Your Finances</h1>
+        <p>Track your expenses, categorize your spending, and achieve your financial goals—all in one place.</p>
+        <a href="/signup" class="btn btn-primary">Get Started</a>
+    </div>
+</section>
+<section class="features">
+    <div class="container">
+        <h2>Features</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>Track Expenses</h3>
+                <p>Easily log your daily expenses and view them in one place.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Organize Spending</h3>
+                <p>Categorize your spending to understand where your money goes.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Visual Reports</h3>
+                <p>Get insightful charts and graphs to analyze your habits.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
