@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Account Details</h2>
+    
+    <!-- Display Account Details -->
+    <form method="POST" action="{{ url_for('main.acc_detail') }}">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" value="{{ session.get('username') }}" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ session.get('email') }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+            <small class="form-text text-muted">Leave blank if you don't want to change the password.</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Account</button>
+    </form>
+</div>
+{% endblock %}

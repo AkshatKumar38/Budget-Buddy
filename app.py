@@ -22,9 +22,10 @@ def create_app():
     # Register Blueprints
     from blueprints.auth import auth_bp
     from blueprints.expenses import expenses_bp
+    from blueprints.main import main_bp
     app.register_blueprint(expenses_bp)
     app.register_blueprint(auth_bp)
-
+    app.register_blueprint(main_bp)
     return app
 
 if __name__ == '__main__':

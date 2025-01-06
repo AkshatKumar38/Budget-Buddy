@@ -9,7 +9,7 @@
         <h1 class="display-4 animated fadeIn">Take Control of Your Finances</h1>
         <p class="lead animated fadeIn delay-1s">Track your expenses, categorize your spending, and achieve your financial goals—all in one place.</p>
         {% if session.get('user_id') %}
-            <a href="{{ url_for('expenses.index') }}" class="btn btn-light btn-lg animated fadeIn delay-2s">View Expenses</a>
+            <a href="{{ url_for('main.index') }}" class="btn btn-light btn-lg animated fadeIn delay-2s">View Expenses</a>
         {% else %}
             <a href="{{ url_for('auth.signup') }}" class="btn btn-light btn-lg animated fadeIn delay-2s">Get Started</a>
         {% endif %}
@@ -48,13 +48,5 @@
         </div>
     </div>
 </section>
-
-
-
 {% endblock %}
 
-{% block styles %}
-
-
-
-{% endblock %}
